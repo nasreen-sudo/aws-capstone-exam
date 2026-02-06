@@ -29,12 +29,12 @@ variable "instance_type" {
 }
  
 variable "key_name" {
-  description = "Existing EC2 key pair name"
+  description = "remote.pem"
   type        = string
 }
  
 variable "my_ip" {
-  description = "Your public IP in CIDR format (example: 49.xx.xx.xx/32)"
+  description = "13.233.157.44"
   type        = string
 }
  
