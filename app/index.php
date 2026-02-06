@@ -1,5 +1,7 @@
 <?php
 $ip = $_SERVER['SERVER_ADDR'];
-echo "<h1>Welcome to Streamline - v2</h1>";
+echo "<body style='background-color:red'>";
+echo "<h1>Welcome to StreamLine - v2 [New Feature]</h1>";
 echo "<p>Server IP: $ip</p>";
+echo "</body>";
 ?>
