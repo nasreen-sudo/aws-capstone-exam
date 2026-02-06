@@ -29,7 +29,7 @@ variable "instance_type" {
 }
  
 variable "key_name" {
-  description = "Existing EC2 key pair name"
+  description = "ec2"
   type        = string
 }
  
