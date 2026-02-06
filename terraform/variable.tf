@@ -29,12 +29,12 @@ variable "instance_type" {
 }
  
 variable "key_name" {
-  description = "var.mp_ip"
+  description = "Existing EC2 key pair name"
   type        = string
 }
  
 variable "my_ip" {
-  description = "13.233.157.44/32"
+  description = "Your public IP in CIDR format (example: 49.xx.xx.xx/32)"
   type        = string
 }
  
@@ -48,5 +48,3 @@ variable "db_password" {
   type        = string
   default     = "Admin12345!"
 }
-
-
