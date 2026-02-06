@@ -28,15 +28,13 @@ variable "instance_type" {
   default = "t2.micro"
 }
  
+
+ 
 variable "key_name" {
   description = "ec2"
   type        = string
 }
- 
-variable "my_ip" {
-  description = "Your public IP in CIDR format (example: 49.xx.xx.xx/32)"
-  type        = string
-}
+
  
 variable "db_username" {
   type    = string
