@@ -1,28 +1,29 @@
-- hosts: all
+---
+- name: Configure Web Servers
+  hosts: web_servers
   become: yes
-  vars:
-    ansible_user: ubuntu   # amazon-linux → ec2-user
   tasks:
-    - name: Update system
+    - name: Install Apache
       apt:
-        update_cache: yes
-
-    - name: Install Apache PHP MySQL client
-      apt:
-        name:
-          - apache2
-          - php
-          - php-mysql
-          - git
+        name: apache2
         state: present
-
-    - name: Clone application
+ 
+    - name: Install PHP
+      apt:
+        name: php
+        state: present
+ 
+    - name: Install MySQL Client
+      apt:
+        name: mysql-client
+        state: present
+ 
+    - name: Clone GitHub Repo
       git:
-        repo: https://github.com/nasreen-sudo/aws-capstone-exam.git
+        repo: 'https://github.com/nasreen-sudo/aws-capstone-exam.git'
         dest: /var/www/html
-        version: main
-
-    - name: Restart Apache
+    - name: Ensure Apache is running
       service:
         name: apache2
-        state: restarted
+        state: started
+        enabled: true
