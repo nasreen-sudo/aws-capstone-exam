@@ -29,12 +29,12 @@ variable "instance_type" {
 }
  
 variable "key_name" {
-  description = "remote.pem"
+  description = "remote"
   type        = string
 }
  
 variable "my_ip" {
-  description = "13.233.157.44"
+  description = "13.233.157.44/32"
   type        = string
 }
  
@@ -48,3 +48,5 @@ variable "db_password" {
   type        = string
   default     = "Admin12345!"
 }
+
+
