@@ -1,0 +1,28 @@
+- hosts: all
+  become: yes
+  vars:
+    ansible_user: ubuntu   # amazon-linux → ec2-user
+  tasks:
+    - name: Update system
+      apt:
+        update_cache: yes
+
+    - name: Install Apache PHP MySQL client
+      apt:
+        name:
+          - apache2
+          - php
+          - php-mysql
+          - git
+        state: present
+
+    - name: Clone application
+      git:
+        repo: https://github.com/nasreen-sudo/aws-capstone-exam.git
+        dest: /var/www/html
+        version: main
+
+    - name: Restart Apache
+      service:
+        name: apache2
+        state: restarted
