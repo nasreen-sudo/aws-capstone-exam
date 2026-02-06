@@ -161,8 +161,8 @@ resource "aws_db_instance" "mysql" {
   engine                 = "mysql"
   engine_version         = "8.0"
   instance_class         = "db.t3.micro"
-  username               = "surya"
-  password               = "surya123"
+  username               = "nasreen"
+  password               = "nasreen123"
   db_subnet_group_name   = aws_db_subnet_group.db_subnets.name
   vpc_security_group_ids = [aws_security_group.db_sg.id]
  
