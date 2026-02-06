@@ -29,7 +29,7 @@ variable "instance_type" {
 }
  
 variable "key_name" {
-  description = "remote"
+  description = "var.mp_ip"
   type        = string
 }
  
